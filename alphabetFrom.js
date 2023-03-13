@@ -9,20 +9,24 @@
 
 // Attention : votre programme devra utiliser une boucle.
 
+const args = process.argv.slice(2);
 
+function alphaFrom(arg){
+  const a = 97;
+  const z = 122;
+  let letterChoose = arg;
+  console.log(letterChoose);
+  let letterToLowerCase = letterChoose.toLowerCase();
+  console.log(letterToLowerCase);
+  let myLetter = letterToLowerCase.charCodeAt();
+  console.log(myLetter);
+  let allAlphabet = "";
 
-const a = 97;
-const z = 122;
-let letterChoose = "a";
-console.log(letterChoose);
-let letterToLowerCase = letterChoose.toLowerCase();
-console.log(letterToLowerCase);
-let myLetter = letterToLowerCase.charCodeAt();
-console.log(myLetter);
-let allAlphabet = "";
+  for(let i=myLetter + 1; i<=z; i++) {
+    allAlphabet += String.fromCharCode(i)
+  };
 
-for(let i=myLetter + 1; i<=z; i++) {
-  allAlphabet += String.fromCharCode(i)
-};
+  console.log(allAlphabet);
+}
 
-console.log(allAlphabet);
+alphaFrom(args[0]);
